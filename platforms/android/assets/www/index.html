@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>World Elections Statistics</title>
+    </head>
+    <body>
+        <div class="app">
+          <h1>World Elections Stats</h1>
+          <h2>Presidentials</h2>
+          <h3>By country</h3>
+              <ul>
+                  <li>
+                      <form>
+                          <select id="countryPresidential">
+                            <option value="226">Taiwan</option>
+                            <option value="223">Turkey</option>
+                          </select>
+                          <select id="whichDataPresidentialForCountry">
+                            <option value="VT">Voter Turnout</option>
+                            <option value="TV">Total vote</option>
+                            <option value="R">Registration</option>
+                            <option value="VAP">Voting Age Population</option>
+                            <option value="P">Population</option>
+                            <option value="IV">Invalid votes</option>
+                          </select>
+
+                          <input type="button" value="Get" onclick="req('getPresidentialsByCountry')">
+                      </form>
+                  </li>
+                  <li>
+                    <div id="PresidentialsByCountry"></div>
+                  </li>
+              </ul>
+
+          <h3>By year</h3>
+              <ul>
+                  <li>
+                      <form>
+                          <select id="yearPresidential">
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                          </select>
+                          <select id="whichDataPresidentialForYear">
+                            <option value="VT">Voter Turnout</option>
+                            <option value="TV">Total vote</option>
+                            <option value="R">Registration</option>
+                            <option value="VAP">Voting Age Population</option>
+                            <option value="P">Population</option>
+                            <option value="IV">Invalid votes</option>
+                          </select>
+                          <input type="button" value="Get" onclick="req('getPresidentialsByYear')">
+                      </form>
+                  </li>
+                  <li>
+                    <div id="PresidentialsByYear"></div>
+                  </li>
+              </ul>
+
+            <h2>Parliamentaries</h2>
+            <h3>By country</h3>
+                <ul>
+                    <li>
+                        <form>
+                          <select id="countryParliamentaries">
+                            <option value="226">Taiwan</option>
+                            <option value="223">Turkey</option>
+                          </select>
+                          <select id="whichDataParliamentariesForCountry">
+                            <option value="VT">Voter Turnout</option>
+                            <option value="TV">Total vote</option>
+                            <option value="R">Registration</option>
+                            <option value="VAP">Voting Age Population</option>
+                            <option value="P">Population</option>
+                            <option value="IV">Invalid votes</option>
+                          </select>
+                            <input type="button" value="Get" onclick="req('getParliamentariesByCountry')">
+                        </form>
+                    </li>
+                    <li>
+                      <div id="ParliamentariesByCountry"></div>
+                    </li>
+                </ul>
+
+            <h3>By year</h3>
+                <ul>
+                    <li>
+                        <form>
+                            <select id="yearParliamentaries">
+                              <option value="1991">1991</option>
+                              <option value="1992">1992</option>
+                              <option value="1993">1993</option>
+                              <option value="1994">1994</option>
+                              <option value="1995">1995</option>
+                              <option value="1996">1996</option>
+                              <option value="1997">1997</option>
+                              <option value="1998">1998</option>
+                              <option value="1999">1999</option>
+                              <option value="2000">2000</option>
+                              <option value="2001">2001</option>
+                              <option value="2002">2002</option>
+                              <option value="2003">2003</option>
+                              <option value="2004">2004</option>
+                              <option value="2005">2005</option>
+                              <option value="2006">2006</option>
+                              <option value="2007">2007</option>
+                              <option value="2008">2008</option>
+                              <option value="2009">2009</option>
+                              <option value="2010">2010</option>
+                              <option value="2011">2011</option>
+                              <option value="2012">2012</option>
+                              <option value="2013">2013</option>
+                              <option value="2014">2014</option>
+                              <option value="2015">2015</option>
+                            </select>
+                            <select id="whichDataParliamentariesForYear">
+                              <option value="VT">Voter Turnout</option>
+                              <option value="TV">Total vote</option>
+                              <option value="R">Registration</option>
+                              <option value="VAP">Voting Age Population</option>
+                              <option value="P">Population</option>
+                              <option value="IV">Invalid votes</option>
+                            </select>
+                            <input type="button" value="Get" onclick="req('getParliamentariesByYear')">
+                        </form>
+                    </li>
+                    <li>
+                      <div id="ParliamentariesByYear"></div>
+                    </li>
+                </ul>
+
+                <p>&copy; Amon BAZONGO (潘忠國) for Mobile Technology and Applications Class</p>
+
+        </div>
+        <script type="text/javascript" src="js/requests.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

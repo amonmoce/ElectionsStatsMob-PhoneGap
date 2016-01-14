@@ -38,11 +38,11 @@ body {
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
-    height:600;
+    height:100%;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
-    width:300px;
+    width:100%;
 }
 
 /* Portrait layout (default) */
@@ -52,8 +52,8 @@ body {
     left:30%;
     top:10%;
     margin-top: 0;
-    height:100%;                   /* text area height */
-    width:50%;                  /* text area width */
+    height:600px;                   /* text area height */
+    width:300px;                  /* text area width */
     text-align:center;
     /*padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     /*margin:-115px 0px 0px -112px;   offset vertical: half of image height and text area height */
